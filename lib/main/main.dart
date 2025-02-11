@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorSchema = ColorScheme.fromSeed(
       seedColor: Colors.blue,
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
     );
 
     return MaterialApp(
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         dividerTheme: const DividerThemeData(space: 0),
         appBarTheme: AppBarTheme(color: colorSchema.primaryContainer),
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         colorScheme: colorSchema,
         useMaterial3: true,
       ),

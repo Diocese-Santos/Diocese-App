@@ -1,4 +1,5 @@
 import 'package:diocese_santos/presentation/presenters/login_presenter.dart';
+import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -11,8 +12,16 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Text('Faça Login com sua conta'),
-          Text('Faça login e acesse seu perfil'),
+          Header(
+            title: 'Faça Login com sua conta',
+            child: Text(
+              'Faça login e acesse seu perfil',
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 16,
+              ),
+            ),
+          ),
           Form(
             child: Column(
               children: [
