@@ -8,11 +8,27 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text('Faça Login com sua conta'),
-        Text('Faça login e acesse seu perfil'),
-      ],
+    return Scaffold(
+      body: Column(
+        children: [
+          Text('Faça Login com sua conta'),
+          Text('Faça login e acesse seu perfil'),
+          Form(
+            child: Column(
+              children: [
+                TextFormField(decoration: InputDecoration(labelText: 'E-mail')),
+                TextFormField(decoration: InputDecoration(labelText: 'Senha')),
+                Text('Esqueci minha senha'),
+                ElevatedButton(onPressed: () {}, child: Text('Entrar')),
+                TextButton(
+                  onPressed: () {},
+                  child: Text('Continuar como visitante'),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
