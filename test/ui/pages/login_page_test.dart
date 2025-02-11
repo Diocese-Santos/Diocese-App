@@ -33,4 +33,12 @@ void main() {
     expect(find.text('Entrar'), findsOne);
     expect(find.text('Continuar como visitante'), findsOne);
   });
+
+  testWidgets('should present register link', (tester) async {
+    await tester.pumpWidget(sut);
+    await tester.pump();
+    expect(find.text('Não tem uma conta? Registre-se'), findsOne);
+    await tester.tap(find.text('Não tem uma conta? Registre-se'));
+    expect(presenter.navigateToSignUpCount, 1);
+  });
 }

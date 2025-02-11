@@ -1,1 +1,3 @@
-abstract class LoginPresenter {}
+abstract class LoginPresenter {
+  void navigateToSignUp();
+}

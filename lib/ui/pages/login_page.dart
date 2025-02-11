@@ -27,6 +27,10 @@ class LoginPage extends StatelessWidget {
               ],
             ),
           ),
+          TextButton(
+            onPressed: presenter.navigateToSignUp,
+            child: Text('Não tem uma conta? Registre-se'),
+          ),
         ],
       ),
     );
