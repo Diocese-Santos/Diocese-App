@@ -8,6 +8,11 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        Text('Faça Login com sua conta'),
+        Text('Faça login e acesse seu perfil'),
+      ],
+    );
   }
 }
