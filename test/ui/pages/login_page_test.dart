@@ -46,8 +46,8 @@ void main() {
     await tester.pumpWidget(sut);
     await tester.pump();
     expect(find.text('Não tem uma conta? Registre-se'), findsOne);
-    await tester.tap(find.text('Não tem uma conta? Registre-se'));
     await tester.ensureVisible(find.text('Não tem uma conta? Registre-se'));
+    await tester.tap(find.text('Não tem uma conta? Registre-se'));
     expect(presenter.navigateToSignUpCount, 1);
   });
 }
