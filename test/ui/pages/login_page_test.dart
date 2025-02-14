@@ -34,6 +34,14 @@ void main() {
     expect(find.text('Continuar como visitante'), findsOne);
   });
 
+  testWidgets('should present forgot my password link', (tester) async {
+    await tester.pumpWidget(sut);
+    await tester.pump();
+    expect(find.text('Esqueci minha senha'), findsOne);
+    await tester.tap(find.text('Esqueci minha senha'));
+    expect(presenter.navigateToForgotPasswordCount, 1);
+  });
+
   testWidgets('should present register link', (tester) async {
     await tester.pumpWidget(sut);
     await tester.pump();

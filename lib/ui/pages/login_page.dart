@@ -61,7 +61,10 @@ class LoginPage extends StatelessWidget {
                       ),
                       obscureText: true,
                     ),
-                    Text('Esqueci minha senha'),
+                    TextButton(
+                      onPressed: presenter.navigateToForgotPassword,
+                      child: Text('Esqueci minha senha'),
+                    ),
                     ElevatedButton(onPressed: () {}, child: Text('Entrar')),
                     TextButton(
                       onPressed: () {},
