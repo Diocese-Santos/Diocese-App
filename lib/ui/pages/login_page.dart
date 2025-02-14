@@ -16,10 +16,9 @@ class LoginPage extends StatelessWidget {
             title: 'Faça Login com sua conta',
             child: Text(
               'Faça login e acesse seu perfil',
-              style: TextStyle(
-                color: Colors.white70,
-                fontSize: 16,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: Colors.white70,
+                  ),
             ),
           ),
           Form(
