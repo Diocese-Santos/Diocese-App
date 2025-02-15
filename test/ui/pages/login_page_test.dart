@@ -30,7 +30,7 @@ void main() {
     expect(find.text('E-mail'), findsOne);
     expect(find.text('Senha'), findsOne);
     expect(find.text('Esqueci minha senha'), findsOne);
-    expect(find.text('Entrar'), findsOne);
+    expect(find.text('Login'), findsOne);
     expect(find.text('Continuar como visitante'), findsOne);
   });
 
