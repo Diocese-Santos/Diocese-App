@@ -113,8 +113,22 @@ class LoginPage extends StatelessWidget {
             ),
             TextButton(
               onPressed: presenter.navigateToSignUp,
-              child: Text('Não tem uma conta? Registre-se'),
-            ),
+              child: Text.rich(
+                TextSpan(
+                  text: "Não tem uma conta? ",
+                  style: TextStyle(color: Colors.grey.shade500),
+                  children: [
+                    TextSpan(
+                      text: "Registre-se",
+                      style: const TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
