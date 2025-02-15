@@ -31,6 +31,19 @@ abstract final class AppTheme {
     ),
   );
 
+  static OutlinedButtonThemeData outlinedButtonStyle = OutlinedButtonThemeData(
+    style: ButtonStyle(
+      foregroundColor: WidgetStateProperty.all(Colors.blue),
+      side: WidgetStateProperty.all(BorderSide(color: Colors.blue)),
+      shape: WidgetStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+          side: BorderSide(color: Colors.blue),
+        ),
+      ),
+    ),
+  );
+
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
@@ -41,6 +54,7 @@ abstract final class AppTheme {
     ),
     inputDecorationTheme: inputDecorationTheme,
     filledButtonTheme: filledButtonStyle,
+    outlinedButtonTheme: outlinedButtonStyle,
     fontFamily: 'Montserrat',
     extensions: const [],
   );

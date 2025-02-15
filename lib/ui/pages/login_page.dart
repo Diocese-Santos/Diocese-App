@@ -77,8 +77,8 @@ class LoginPage extends StatelessWidget {
                     ),
                     Gap(24),
                     SizedBox(
-                      width: double.infinity,
                       height: 48,
+                      width: double.infinity,
                       child: FilledButton(
                         onPressed: presenter.signIn,
                         child: Text(
@@ -91,9 +91,21 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    TextButton(
-                      onPressed: presenter.navigateWithVisitor,
-                      child: Text('Continuar como visitante'),
+                    Gap(14),
+                    SizedBox(
+                      height: 48,
+                      width: double.infinity,
+                      child: OutlinedButton(
+                        onPressed: presenter.navigateWithVisitor,
+                        child: Text(
+                          'Continuar como visitante',
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
