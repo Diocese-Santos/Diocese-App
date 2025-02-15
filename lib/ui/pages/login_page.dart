@@ -61,9 +61,19 @@ class LoginPage extends StatelessWidget {
                       ),
                       obscureText: true,
                     ),
-                    TextButton(
-                      onPressed: presenter.navigateToForgotPassword,
-                      child: Text('Esqueci minha senha'),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: presenter.navigateToForgotPassword,
+                        child: Text(
+                          'Esqueci minha senha',
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                        ),
+                      ),
                     ),
                     ElevatedButton(onPressed: () {}, child: Text('Entrar')),
                     TextButton(
