@@ -42,6 +42,22 @@ void main() {
     expect(presenter.navigateToForgotPasswordCount, 1);
   });
 
+  testWidgets('should present sign in button', (tester) async {
+    await tester.pumpWidget(sut);
+    await tester.pump();
+    expect(find.text('Entrar'), findsOne);
+    await tester.tap(find.text('Entrar'));
+    expect(presenter.signInCount, 1);
+  });
+
+  testWidgets('should present navigate with visitor button', (tester) async {
+    await tester.pumpWidget(sut);
+    await tester.pump();
+    expect(find.text('Continuar como visitante'), findsOne);
+    await tester.tap(find.text('Continuar como visitante'));
+    expect(presenter.navigateWithVisitorCount, 1);
+  });
+
   testWidgets('should present register link', (tester) async {
     await tester.pumpWidget(sut);
     await tester.pump();

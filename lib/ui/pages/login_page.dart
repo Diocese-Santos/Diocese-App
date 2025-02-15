@@ -75,9 +75,12 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    ElevatedButton(onPressed: () {}, child: Text('Entrar')),
+                    ElevatedButton(
+                      onPressed: presenter.signIn,
+                      child: Text('Entrar'),
+                    ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: presenter.navigateWithVisitor,
                       child: Text('Continuar como visitante'),
                     ),
                   ],

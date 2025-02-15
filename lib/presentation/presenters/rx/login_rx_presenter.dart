@@ -6,4 +6,10 @@ class LoginRxPresenter implements LoginPresenter {
 
   @override
   void navigateToForgotPassword() {}
+
+  @override
+  void signIn() {}
+
+  @override
+  void navigateWithVisitor() {}
 }
