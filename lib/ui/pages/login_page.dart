@@ -75,9 +75,21 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    ElevatedButton(
-                      onPressed: presenter.signIn,
-                      child: Text('Entrar'),
+                    Gap(24),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 48,
+                      child: FilledButton(
+                        onPressed: presenter.signIn,
+                        child: Text(
+                          'Login',
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                        ),
+                      ),
                     ),
                     TextButton(
                       onPressed: presenter.navigateWithVisitor,

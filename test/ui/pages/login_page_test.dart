@@ -45,8 +45,8 @@ void main() {
   testWidgets('should present sign in button', (tester) async {
     await tester.pumpWidget(sut);
     await tester.pump();
-    expect(find.text('Entrar'), findsOne);
-    await tester.tap(find.text('Entrar'));
+    expect(find.text('Login'), findsOne);
+    await tester.tap(find.text('Login'));
     expect(presenter.signInCount, 1);
   });
 

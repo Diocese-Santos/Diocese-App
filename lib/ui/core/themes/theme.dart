@@ -20,6 +20,17 @@ abstract final class AppTheme {
     labelStyle: TextStyle(color: Colors.grey.shade400),
   );
 
+  static FilledButtonThemeData filledButtonStyle = FilledButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: WidgetStateProperty.all(Colors.blue),
+      shape: WidgetStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+    ),
+  );
+
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
@@ -29,6 +40,7 @@ abstract final class AppTheme {
       centerTitle: true,
     ),
     inputDecorationTheme: inputDecorationTheme,
+    filledButtonTheme: filledButtonStyle,
     fontFamily: 'Montserrat',
     extensions: const [],
   );
