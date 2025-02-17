@@ -1,4 +1,4 @@
-import 'package:diocese_santos/main/factories/ui/pages/login_page_factory.dart';
+import 'package:diocese_santos/main/routing/router.dart';
 import 'package:diocese_santos/ui/core/themes/theme.dart';
 
 import 'package:flutter/material.dart';
@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      home: makeLoginPage(),
+      routerConfig: router(),
     );
   }
 }
