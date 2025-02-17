@@ -1,4 +1,5 @@
 import 'package:diocese_santos/presentation/presenters/forgot_password.dart';
+import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
@@ -11,6 +12,14 @@ class ForgotPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Header(
+      title: 'Recuperar senha',
+      child: Text(
+        'Insira seu email para resetar sua senha',
+        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+              color: Colors.white70,
+            ),
+      ),
+    );
   }
 }

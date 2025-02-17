@@ -15,5 +15,10 @@ void main() {
     );
   });
 
-  testWidgets('', (tester) async {});
+  testWidgets('should show header text', (tester) async {
+    await tester.pumpWidget(sut);
+    await tester.pump();
+    expect(find.text('Recuperar senha'), findsOne);
+    expect(find.text('Insira seu email para resetar sua senha'), findsOne);
+  });
 }
