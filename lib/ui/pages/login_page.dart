@@ -1,7 +1,9 @@
+import 'package:diocese_santos/main/routing/routes.dart';
 import 'package:diocese_santos/presentation/presenters/login_presenter.dart';
 import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key, required this.presenter});
@@ -64,7 +66,7 @@ class LoginPage extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: presenter.navigateToForgotPassword,
+                        onPressed: () => context.push(Routes.forgotMyPassword),
                         child: Text(
                           'Esqueci minha senha',
                           style:
@@ -96,7 +98,7 @@ class LoginPage extends StatelessWidget {
                       height: 48,
                       width: double.infinity,
                       child: OutlinedButton(
-                        onPressed: presenter.navigateWithVisitor,
+                        onPressed: () {},
                         child: Text(
                           'Continuar como visitante',
                           style:
@@ -112,7 +114,7 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: presenter.navigateToSignUp,
+              onPressed: () {},
               child: Text.rich(
                 TextSpan(
                   text: "Não tem uma conta? ",

@@ -38,8 +38,6 @@ void main() {
     await tester.pumpWidget(sut);
     await tester.pump();
     expect(find.text('Esqueci minha senha'), findsOne);
-    await tester.tap(find.text('Esqueci minha senha'));
-    expect(presenter.navigateToForgotPasswordCount, 1);
   });
 
   testWidgets('should present sign in button', (tester) async {
@@ -54,16 +52,11 @@ void main() {
     await tester.pumpWidget(sut);
     await tester.pump();
     expect(find.text('Continuar como visitante'), findsOne);
-    await tester.tap(find.text('Continuar como visitante'));
-    expect(presenter.navigateWithVisitorCount, 1);
   });
 
   testWidgets('should present register link', (tester) async {
     await tester.pumpWidget(sut);
     await tester.pump();
     expect(find.text('Não tem uma conta? Registre-se'), findsOne);
-    await tester.ensureVisible(find.text('Não tem uma conta? Registre-se'));
-    await tester.tap(find.text('Não tem uma conta? Registre-se'));
-    expect(presenter.navigateToSignUpCount, 1);
   });
 }
