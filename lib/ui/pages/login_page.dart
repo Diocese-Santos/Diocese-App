@@ -14,6 +14,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageContainer(
+      isAFormPage: true,
       children: [
         Header(
           title: 'Faça Login com sua conta',
@@ -24,12 +25,12 @@ class LoginPage extends StatelessWidget {
                 ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 24,
-            vertical: 32,
-          ),
-          child: Form(
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+              vertical: 32,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -75,58 +76,67 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Gap(24),
-                SizedBox(
-                  height: 48,
-                  width: double.infinity,
-                  child: FilledButton(
-                    onPressed: presenter.signIn,
-                    child: Text(
-                      'Login',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                    ),
-                  ),
-                ),
-                Gap(14),
-                SizedBox(
-                  height: 48,
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Continuar como visitante',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.w500,
-                          ),
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
         ),
-        TextButton(
-          onPressed: () {},
-          child: Text.rich(
-            TextSpan(
-              text: "Não tem uma conta? ",
-              style: TextStyle(color: Colors.grey.shade500),
-              children: [
-                TextSpan(
-                  text: "Registre-se",
-                  style: const TextStyle(
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 24,
+            vertical: 32,
+          ),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 48,
+                width: double.infinity,
+                child: FilledButton(
+                  onPressed: presenter.signIn,
+                  child: Text(
+                    'Login',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
                   ),
                 ),
-              ],
-            ),
+              ),
+              Gap(14),
+              SizedBox(
+                height: 48,
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Continuar como visitante',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text.rich(
+                  TextSpan(
+                    text: "Não tem uma conta? ",
+                    style: TextStyle(color: Colors.grey.shade500),
+                    children: [
+                      TextSpan(
+                        text: "Registre-se",
+                        style: const TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-        )
+        ),
       ],
     );
   }
