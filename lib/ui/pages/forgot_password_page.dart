@@ -16,6 +16,7 @@ class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageContainer(
+      isAFormPage: true,
       children: [
         Header(
           title: 'Recuperar senha',
