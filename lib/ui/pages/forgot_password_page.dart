@@ -15,7 +15,7 @@ class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: Form(
         child: Column(
           children: [
             Header(
@@ -27,12 +27,12 @@ class ForgotPasswordPage extends StatelessWidget {
                     ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24,
-                vertical: 32,
-              ),
-              child: Form(
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 32,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -42,50 +42,55 @@ class ForgotPasswordPage extends StatelessWidget {
                             color: Colors.grey.shade600,
                           ),
                     ),
-                    Gap(12),
+                    const Gap(12),
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Seu e-mail',
                         prefixIcon: Icon(Icons.email_outlined),
                       ),
                       keyboardType: TextInputType.emailAddress,
                     ),
-                    Gap(24),
-                    SizedBox(
-                      height: 48,
-                      width: double.infinity,
-                      child: FilledButton(
-                        onPressed: presenter.handleRecoveryPassword,
-                        child: Text(
-                          'Recuperar',
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
-                      ),
-                    ),
-                    Gap(14),
-                    SizedBox(
-                      height: 48,
-                      width: double.infinity,
-                      child: OutlinedButton(
-                        onPressed: context.pop,
-                        child: Text(
-                          'Cancelar',
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 48,
+                    width: double.infinity,
+                    child: FilledButton(
+                      onPressed: presenter.handleRecoveryPassword,
+                      child: Text(
+                        'Recuperar',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      ),
+                    ),
+                  ),
+                  const Gap(14),
+                  SizedBox(
+                    height: 48,
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      onPressed: context.pop,
+                      child: Text(
+                        'Cancelar',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      ),
+                    ),
+                  ),
+                  const Gap(14),
+                ],
+              ),
+            ),
           ],
         ),
       ),
