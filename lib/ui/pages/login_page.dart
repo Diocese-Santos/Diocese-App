@@ -116,6 +116,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
+              Gap(38),
               TextButton(
                 onPressed: () {},
                 child: Text.rich(
