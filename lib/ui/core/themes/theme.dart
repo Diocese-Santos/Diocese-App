@@ -44,17 +44,25 @@ abstract final class AppTheme {
     ),
   );
 
+  static IconButtonThemeData iconButtonStyle = IconButtonThemeData(
+    style: ButtonStyle(
+      padding: WidgetStateProperty.all(EdgeInsets.zero),
+      backgroundColor: WidgetStateProperty.all(Colors.white),
+      shadowColor: WidgetStateProperty.all(Colors.black),
+      elevation: WidgetStateProperty.all(5),
+      fixedSize: WidgetStateProperty.all(const Size(48, 48)),
+    ),
+  );
+
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
     dividerTheme: const DividerThemeData(space: 0),
-    appBarTheme: const AppBarTheme(
-      elevation: 0,
-      centerTitle: true,
-    ),
+    appBarTheme: const AppBarTheme(elevation: 0, centerTitle: true),
     inputDecorationTheme: inputDecorationTheme,
     filledButtonTheme: filledButtonStyle,
     outlinedButtonTheme: outlinedButtonStyle,
+    iconButtonTheme: iconButtonStyle,
     fontFamily: 'Montserrat',
     extensions: const [],
   );
