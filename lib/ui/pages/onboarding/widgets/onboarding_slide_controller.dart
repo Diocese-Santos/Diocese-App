@@ -6,6 +6,7 @@ class OnboardingSlideController extends StatelessWidget {
     required this.currentPageIndex,
     required this.onPreviousSlide,
     required this.onNextSlide,
+    required this.slidesLength,
     super.key,
   });
 
@@ -13,37 +14,42 @@ class OnboardingSlideController extends StatelessWidget {
   final void Function() onPreviousSlide;
   final void Function() onNextSlide;
 
+  final int slidesLength;
+
   @override
   Widget build(BuildContext context) {
+    final isFirstSlide = currentPageIndex == 0;
+    final isLastSlide = currentPageIndex == slidesLength - 1;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
           onPressed: () {
-            if (currentPageIndex == 0) return;
+            if (isFirstSlide) return;
             onPreviousSlide();
           },
           icon: const Icon(
             Icons.chevron_left,
             size: 28,
-            color: Color(0xff3173B9),
             weight: 900,
+            color: Color(0xff3173B9),
           ),
         ),
         ProgressDots(activeIndex: currentPageIndex),
         AnimatedRotation(
           duration: const Duration(milliseconds: 200),
-          turns: currentPageIndex == 2 ? -0.25 : 0, // 0.25 == 90deg
+          turns: isLastSlide ? -0.25 : 0, // 0.25 == 90deg
           child: IconButton(
             onPressed: () {
-              if (currentPageIndex == 2) return;
+              if (isLastSlide) return;
               onNextSlide();
             },
             icon: const Icon(
               Icons.chevron_right,
               size: 28,
-              color: Color(0xff3173B9),
               weight: 900,
+              color: Color(0xff3173B9),
             ),
           ),
         ),
