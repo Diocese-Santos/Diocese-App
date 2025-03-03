@@ -54,6 +54,17 @@ abstract final class AppTheme {
     ),
   );
 
+  static BottomSheetThemeData bottomSheetTheme = BottomSheetThemeData(
+    backgroundColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(32),
+        topRight: Radius.circular(32),
+      ),
+    ),
+    dragHandleColor: Colors.grey[200],
+  );
+
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
@@ -63,6 +74,7 @@ abstract final class AppTheme {
     filledButtonTheme: filledButtonStyle,
     outlinedButtonTheme: outlinedButtonStyle,
     iconButtonTheme: iconButtonStyle,
+    bottomSheetTheme: bottomSheetTheme,
     fontFamily: 'Montserrat',
     extensions: const [],
   );
