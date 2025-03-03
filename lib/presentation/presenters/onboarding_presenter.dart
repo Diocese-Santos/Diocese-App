@@ -8,3 +8,15 @@ abstract class OnboardingPresenter {
 
   PageController get pageViewController;
 }
+
+final class OnboardingSlideViewModel {
+  final String title;
+  final String description;
+  final String image;
+
+  const OnboardingSlideViewModel({
+    required this.title,
+    required this.description,
+    required this.image,
+  });
+}
