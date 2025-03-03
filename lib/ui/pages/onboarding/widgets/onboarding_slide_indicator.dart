@@ -1,5 +1,5 @@
 import 'package:diocese_santos/presentation/presenters/onboarding_presenter.dart';
-import 'package:diocese_santos/ui/widgets/page_indicator.dart';
+import 'package:diocese_santos/ui/pages/onboarding/widgets/onboarding_slide_controller.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingSlideIndicator extends StatelessWidget {
@@ -25,7 +25,7 @@ class OnboardingSlideIndicator extends StatelessWidget {
             builder: (context, snapshot) {
               if (!snapshot.hasData) return const SizedBox.shrink();
 
-              return PageIndicator(
+              return OnboardingSlideController(
                 currentPageIndex: snapshot.data!,
                 onPreviousSlide: () =>
                     presenter.handleChangeSlide(snapshot.data! - 1),

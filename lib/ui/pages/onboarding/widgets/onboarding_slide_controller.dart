@@ -1,8 +1,8 @@
 import 'package:diocese_santos/ui/widgets/progress_dots.dart';
 import 'package:flutter/material.dart';
 
-class PageIndicator extends StatelessWidget {
-  const PageIndicator({
+class OnboardingSlideController extends StatelessWidget {
+  const OnboardingSlideController({
     required this.currentPageIndex,
     required this.onPreviousSlide,
     required this.onNextSlide,
@@ -31,16 +31,20 @@ class PageIndicator extends StatelessWidget {
           ),
         ),
         ProgressDots(activeIndex: currentPageIndex),
-        IconButton(
-          onPressed: () {
-            if (currentPageIndex == 2) return;
-            onNextSlide();
-          },
-          icon: const Icon(
-            Icons.chevron_right,
-            size: 28,
-            color: Color(0xff3173B9),
-            weight: 900,
+        AnimatedRotation(
+          duration: const Duration(milliseconds: 200),
+          turns: currentPageIndex == 2 ? -0.25 : 0, // 0.25 == 90deg
+          child: IconButton(
+            onPressed: () {
+              if (currentPageIndex == 2) return;
+              onNextSlide();
+            },
+            icon: const Icon(
+              Icons.chevron_right,
+              size: 28,
+              color: Color(0xff3173B9),
+              weight: 900,
+            ),
           ),
         ),
       ],
