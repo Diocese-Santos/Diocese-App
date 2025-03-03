@@ -27,7 +27,7 @@ class OnboardingChoice extends StatelessWidget {
             height: 48,
             width: double.infinity,
             child: FilledButton(
-              onPressed: () => context.push(Routes.home),
+              onPressed: () => context.go(Routes.home),
               child: Text(
                 'Login',
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -42,7 +42,7 @@ class OnboardingChoice extends StatelessWidget {
             height: 48,
             width: double.infinity,
             child: OutlinedButton(
-              onPressed: () => context.push(Routes.home),
+              onPressed: () => context.go(Routes.home),
               child: Text(
                 'Criar conta',
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -54,7 +54,7 @@ class OnboardingChoice extends StatelessWidget {
           ),
           Gap(16),
           TextButton(
-            onPressed: () => context.push(Routes.home),
+            onPressed: () => context.go(Routes.home),
             child: Text(
               'Continuar como visitante',
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
