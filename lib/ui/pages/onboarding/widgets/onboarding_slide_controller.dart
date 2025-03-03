@@ -1,3 +1,4 @@
+import 'package:diocese_santos/ui/pages/onboarding/widgets/onboarding_choice.dart';
 import 'package:diocese_santos/ui/widgets/progress_dots.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,8 @@ class OnboardingSlideController extends StatelessWidget {
     final isFirstSlide = currentPageIndex == 0;
     final isLastSlide = currentPageIndex == slidesLength - 1;
 
+    final size = MediaQuery.sizeOf(context);
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -42,7 +45,18 @@ class OnboardingSlideController extends StatelessWidget {
           turns: isLastSlide ? -0.25 : 0, // 0.25 == 90deg
           child: IconButton(
             onPressed: () {
-              if (isLastSlide) return;
+              if (isLastSlide) {
+                showBottomSheet(
+                  context: context,
+                  showDragHandle: true,
+                  constraints: BoxConstraints(
+                    maxHeight: size.height * 0.5,
+                    minWidth: size.width,
+                  ),
+                  builder: (context) => OnboardingChoice(),
+                );
+                return;
+              }
               onNextSlide();
             },
             icon: const Icon(
