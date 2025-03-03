@@ -1,16 +1,17 @@
+import 'package:diocese_santos/ui/widgets/progress_dots.dart';
 import 'package:flutter/material.dart';
 
 class PageIndicator extends StatelessWidget {
   const PageIndicator({
-    required this.tabController,
     required this.currentPageIndex,
-    required this.onUpdateCurrentPageIndex,
+    required this.onPreviousSlide,
+    required this.onNextSlide,
     super.key,
   });
 
   final int currentPageIndex;
-  final TabController tabController;
-  final void Function(int) onUpdateCurrentPageIndex;
+  final void Function() onPreviousSlide;
+  final void Function() onNextSlide;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class PageIndicator extends StatelessWidget {
         IconButton(
           onPressed: () {
             if (currentPageIndex == 0) return;
-            onUpdateCurrentPageIndex(currentPageIndex - 1);
+            onPreviousSlide();
           },
           icon: const Icon(
             Icons.chevron_left,
@@ -29,17 +30,11 @@ class PageIndicator extends StatelessWidget {
             weight: 900,
           ),
         ),
-        TabPageSelector(
-          controller: tabController,
-          color: Colors.white.withAlpha(100),
-          selectedColor: Colors.white,
-          borderStyle: BorderStyle.none,
-          indicatorSize: 10,
-        ),
+        ProgressDots(activeIndex: currentPageIndex),
         IconButton(
           onPressed: () {
             if (currentPageIndex == 2) return;
-            onUpdateCurrentPageIndex(currentPageIndex + 1);
+            onNextSlide();
           },
           icon: const Icon(
             Icons.chevron_right,
