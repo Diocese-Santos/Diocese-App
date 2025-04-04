@@ -118,7 +118,7 @@ class LoginPage extends StatelessWidget {
               ),
               Gap(38),
               TextButton(
-                onPressed: () {},
+                onPressed: () => context.push(Routes.registerBasicData),
                 child: Text.rich(
                   TextSpan(
                     text: "Não tem uma conta? ",
