@@ -44,7 +44,7 @@ class RegisterBasicDataPage extends StatelessWidget {
                 TextFormField(
                   decoration: InputDecoration(
                     labelText: 'Seu nome completo',
-                    prefixIcon: Icon(Icons.email_outlined),
+                    prefixIcon: Icon(Icons.person_outline),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
