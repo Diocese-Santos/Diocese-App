@@ -42,7 +42,7 @@ class OnboardingChoice extends StatelessWidget {
             height: 48,
             width: double.infinity,
             child: OutlinedButton(
-              onPressed: () => context.go(Routes.registerBasicData),
+              onPressed: () => context.push(Routes.registerBasicData),
               child: Text(
                 'Criar conta',
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
