@@ -92,7 +92,10 @@ class RegisterCompleteDataPage extends StatelessWidget {
                 height: 48,
                 width: double.infinity,
                 child: FilledButton(
-                  onPressed: presenter.next,
+                  onPressed: () {
+                    presenter.next();
+                    context.go(Routes.registerUploadPhoto);
+                  },
                   child: Text(
                     'Próximo',
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
