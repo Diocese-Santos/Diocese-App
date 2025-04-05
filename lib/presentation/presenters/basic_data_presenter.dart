@@ -1,3 +1,3 @@
 abstract class RegisterBasicDataPresenter {
-  void next();
+  void next({required Function? redirectCallback});
 }
