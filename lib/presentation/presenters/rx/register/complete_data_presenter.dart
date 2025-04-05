@@ -2,5 +2,7 @@ import 'package:diocese_santos/presentation/presenters/complete_data_presenter.d
 
 class RegisterCompleteDataRxPresenter implements RegisterCompleteDataPresenter {
   @override
-  void next() {}
+  void next({Function? redirectCallback}) {
+    redirectCallback?.call();
+  }
 }

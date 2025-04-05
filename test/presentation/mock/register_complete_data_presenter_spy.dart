@@ -5,7 +5,7 @@ final class RegisterCompleteDataPresenterSpy
   int nextCount = 0;
 
   @override
-  void next() {
+  void next({required Function? redirectCallback}) {
     nextCount++;
   }
 }
