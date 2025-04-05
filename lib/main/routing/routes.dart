@@ -6,4 +6,5 @@ abstract final class Routes {
   static const forgotMyPassword = '/forgot-my-password';
   static const registerBasicData = '/register/basic-data';
   static const registerCompleteData = '/register/complete-data';
+  static const registerUploadPhoto = '/register/upload-photo';
 }
