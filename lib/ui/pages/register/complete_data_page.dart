@@ -1,15 +1,15 @@
 import 'package:diocese_santos/main/routing/routes.dart';
-import 'package:diocese_santos/presentation/presenters/login_presenter.dart';
+import 'package:diocese_santos/presentation/presenters/complete_data_presenter.dart';
 import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:diocese_santos/ui/widgets/page_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key, required this.presenter});
+class RegisterCompleteDataPage extends StatelessWidget {
+  const RegisterCompleteDataPage({required this.presenter, super.key});
 
-  final LoginPresenter presenter;
+  final RegisterCompleteDataPresenter presenter;
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,9 @@ class LoginPage extends StatelessWidget {
       isAFormPage: true,
       children: [
         Header(
-          title: 'Faça Login com sua conta',
+          title: 'Falta pouco',
           child: Text(
-            'Faça login e acesse seu perfil',
+            'Insira dados adicionais para uma melhor experiência',
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   color: Colors.white70,
                 ),
@@ -35,7 +35,7 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'E-mail',
+                  'Data de Nascimento',
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: Colors.grey.shade600,
                       ),
@@ -43,14 +43,14 @@ class LoginPage extends StatelessWidget {
                 Gap(12),
                 TextFormField(
                   decoration: InputDecoration(
-                    labelText: 'Seu e-mail',
-                    prefixIcon: Icon(Icons.email_outlined),
+                    labelText: 'dd/mm/aaaa',
+                    prefixIcon: Icon(Icons.cake_outlined),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
                 Gap(16),
                 Text(
-                  'Senha',
+                  'Cidade',
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: Colors.grey.shade600,
                       ),
@@ -58,22 +58,23 @@ class LoginPage extends StatelessWidget {
                 Gap(12),
                 TextFormField(
                   decoration: InputDecoration(
-                    labelText: 'Sua senha',
-                    prefixIcon: Icon(Icons.lock_outlined),
+                    labelText: 'Selecione sua cidade',
+                    prefixIcon: Icon(Icons.home_work_outlined),
                   ),
-                  obscureText: true,
+                  keyboardType: TextInputType.emailAddress,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () => context.push(Routes.forgotMyPassword),
-                    child: Text(
-                      'Esqueci minha senha',
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.w600,
-                          ),
-                    ),
+                Gap(16),
+                Text(
+                  'Paróquia',
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Colors.grey.shade600,
+                      ),
+                ),
+                Gap(12),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Selecione sua paróquia',
+                    prefixIcon: Icon(Icons.church_outlined),
                   ),
                 ),
               ],
@@ -91,9 +92,14 @@ class LoginPage extends StatelessWidget {
                 height: 48,
                 width: double.infinity,
                 child: FilledButton(
-                  onPressed: presenter.signIn,
+                  onPressed: () {
+                    presenter.next(
+                      redirectCallback: () =>
+                          context.go(Routes.registerCompleteData),
+                    );
+                  },
                   child: Text(
-                    'Login',
+                    'Próximo',
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
@@ -118,14 +124,14 @@ class LoginPage extends StatelessWidget {
               ),
               Gap(38),
               TextButton(
-                onPressed: () => context.push(Routes.registerBasicData),
+                onPressed: () => context.go(Routes.home),
                 child: Text.rich(
                   TextSpan(
-                    text: "Não tem uma conta? ",
+                    text: "Já tem uma conta? ",
                     style: TextStyle(color: Colors.grey.shade500),
                     children: [
                       TextSpan(
-                        text: "Registre-se",
+                        text: "Faça login",
                         style: const TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
