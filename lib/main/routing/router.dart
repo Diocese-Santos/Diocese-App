@@ -3,6 +3,7 @@ import 'package:diocese_santos/main/factories/ui/pages/login_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/onboarding_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/register/basic_data_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/register/complete_data_page_factory.dart';
+import 'package:diocese_santos/main/factories/ui/pages/register/upload_photo_page_factory.dart';
 import 'package:go_router/go_router.dart';
 
 import 'routes.dart';
@@ -27,6 +28,10 @@ GoRouter router() => GoRouter(
         GoRoute(
           path: Routes.registerCompleteData,
           builder: (_, __) => makeRegisterCompleteDataPage(),
+        ),
+        GoRoute(
+          path: Routes.registerUploadPhoto,
+          builder: (_, __) => makeRegisterUploadPhotoPage(),
         ),
       ],
     );
