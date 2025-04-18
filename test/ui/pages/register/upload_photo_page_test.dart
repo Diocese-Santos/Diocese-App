@@ -43,6 +43,7 @@ void main() {
     await tester.pumpWidget(sut);
     await tester.pump();
     expect(find.text('Criar Conta'), findsOne);
+    await tester.ensureVisible(find.text('Criar Conta'));
     await tester.tap(find.text('Criar Conta'));
     expect(presenter.uploadPhotoCount, 1);
   });
