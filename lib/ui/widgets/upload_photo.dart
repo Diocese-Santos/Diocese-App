@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 
 class UploadWidget extends StatelessWidget {
-  const UploadWidget({super.key});
+  const UploadWidget({
+    super.key,
+    this.size = const Size(220, 220),
+    this.onTap,
+  });
+
+  final Size size;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(999),
-      onTap: () => print('Upload'),
+      onTap: onTap,
       child: CustomPaint(
         painter: _DashedCirclePainter(
           color: Colors.lightBlue.withValues(alpha: .6),
@@ -16,8 +23,8 @@ class UploadWidget extends StatelessWidget {
           gapLength: 5,
         ),
         child: Container(
-          width: 220,
-          height: 220,
+          width: size.width,
+          height: size.height,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.transparent,
