@@ -26,6 +26,10 @@ jobs:
           channel: stable
           version: 3.27.0
 
+      - name: Create .env from secrets
+        run: |
+          echo "SEGMENT_WRITE_KEY=${{ secrets.SEGMENT_WRITE_KEY }}" > .env
+
       - name: Install dependencies
         run: flutter pub get
 

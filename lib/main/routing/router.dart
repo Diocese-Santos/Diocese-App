@@ -6,11 +6,16 @@ import 'package:diocese_santos/main/factories/ui/pages/register/complete_data_pa
 import 'package:diocese_santos/main/factories/ui/pages/register/upload_photo_page_factory.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:segment_analytics/client.dart';
+
 import 'routes.dart';
 
 GoRouter router() => GoRouter(
       initialLocation: Routes.onboarding,
       debugLogDiagnostics: true,
+      observers: [
+        ScreenObserver(),
+      ],
       routes: [
         GoRoute(path: Routes.home, builder: (_, __) => makeLoginPage()),
         GoRoute(
