@@ -36,7 +36,7 @@ class RegisterUploadPhotoPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Gap(40),
-                UploadWidget(),
+                UploadPhoto(),
                 Gap(24),
                 Text(
                   'Henrique Martins',
