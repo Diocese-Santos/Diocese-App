@@ -2,6 +2,7 @@ import 'package:diocese_santos/main/routing/routes.dart';
 import 'package:diocese_santos/presentation/presenters/upload_photo_presenter.dart';
 import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:diocese_santos/ui/widgets/page_container.dart';
+import 'package:diocese_santos/ui/widgets/upload_photo.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -32,8 +33,26 @@ class RegisterUploadPhotoPage extends StatelessWidget {
               vertical: 32,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [],
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Gap(40),
+                UploadPhoto(),
+                Gap(24),
+                Text(
+                  'Henrique Martins',
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        color: Colors.grey.shade800,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+                Gap(4),
+                Text(
+                  'hmartins224@gmail.com',
+                  style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                        color: Colors.grey.shade500,
+                      ),
+                ),
+              ],
             ),
           ),
         ),

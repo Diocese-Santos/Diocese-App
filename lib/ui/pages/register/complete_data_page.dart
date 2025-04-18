@@ -95,7 +95,7 @@ class RegisterCompleteDataPage extends StatelessWidget {
                   onPressed: () {
                     presenter.next(
                       redirectCallback: () =>
-                          context.go(Routes.registerCompleteData),
+                          context.go(Routes.registerUploadPhoto),
                     );
                   },
                   child: Text(
