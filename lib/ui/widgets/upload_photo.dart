@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UploadWidget extends StatelessWidget {
-  const UploadWidget({
+class UploadPhoto extends StatelessWidget {
+  const UploadPhoto({
     super.key,
     this.size = const Size(220, 220),
     this.onTap,
