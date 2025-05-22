@@ -27,7 +27,7 @@ class OnboardingChoice extends StatelessWidget {
             height: 48,
             width: double.infinity,
             child: FilledButton(
-              onPressed: () => context.go(Routes.home),
+              onPressed: () => context.go(Routes.login),
               child: Text(
                 'Login',
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(

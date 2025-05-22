@@ -1,4 +1,5 @@
 import 'package:diocese_santos/main/factories/ui/pages/forgot_password_page_factory.dart';
+import 'package:diocese_santos/main/factories/ui/pages/home_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/login_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/onboarding_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/register/basic_data_page_factory.dart';
@@ -17,7 +18,7 @@ GoRouter router() => GoRouter(
         ScreenObserver(),
       ],
       routes: [
-        GoRoute(path: Routes.home, builder: (_, __) => makeLoginPage()),
+        GoRoute(path: Routes.login, builder: (_, __) => makeLoginPage()),
         GoRoute(
           path: Routes.onboarding,
           builder: (_, __) => makeOnboardingPage(),
@@ -38,5 +39,9 @@ GoRouter router() => GoRouter(
           path: Routes.registerUploadPhoto,
           builder: (_, __) => makeRegisterUploadPhotoPage(),
         ),
+        GoRoute(
+          path: Routes.home,
+          builder: (_, __) => makeHomePage(),
+        )
       ],
     );

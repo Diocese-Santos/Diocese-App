@@ -91,7 +91,10 @@ class LoginPage extends StatelessWidget {
                 height: 48,
                 width: double.infinity,
                 child: FilledButton(
-                  onPressed: presenter.signIn,
+                  onPressed: () {
+                    presenter.signIn();
+                    context.push(Routes.home);
+                  },
                   child: Text(
                     'Login',
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(

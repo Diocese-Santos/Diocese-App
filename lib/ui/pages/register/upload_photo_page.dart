@@ -79,7 +79,7 @@ class RegisterUploadPhotoPage extends StatelessWidget {
               ),
               Gap(38),
               TextButton(
-                onPressed: () => context.go(Routes.home),
+                onPressed: () => context.go(Routes.login),
                 child: Text.rich(
                   TextSpan(
                     text: "Já tem uma conta? ",
