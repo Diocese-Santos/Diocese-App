@@ -1,17 +1,29 @@
 import 'package:diocese_santos/presentation/presenters/home_presenter.dart';
+import 'package:diocese_santos/ui/pages/home/widgets/liturgical_informations.dart';
 import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:diocese_santos/ui/widgets/page_container.dart';
 import 'package:diocese_santos/ui/widgets/user_info_header.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({
     required this.presenter,
     super.key,
   });
 
   final HomePresenter presenter;
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    widget.presenter.getLiturgicalInformations();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +69,11 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+        LiturgicalInformations(
+          date: widget.presenter.liturgicalDate,
+          week: widget.presenter.liturgicalWeek,
+          color: widget.presenter.liturgicalColor,
+        )
       ],
     );
   }
