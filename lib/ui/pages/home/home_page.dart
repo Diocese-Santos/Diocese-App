@@ -65,6 +65,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     prefixIcon: const Icon(Icons.search),
                     prefixIconColor: Colors.blueAccent,
+                    fillColor: Colors.white,
                   ),
                 ),
               ),
