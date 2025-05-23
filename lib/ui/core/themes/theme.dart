@@ -3,6 +3,30 @@
 import 'package:flutter/material.dart';
 
 abstract final class AppTheme {
+  static BottomNavigationBarThemeData bottomNavigationBarTheme =
+      BottomNavigationBarThemeData(
+    backgroundColor: Colors.white,
+    selectedItemColor: Colors.blueAccent[400],
+    unselectedItemColor: Colors.grey.shade400,
+    showSelectedLabels: true,
+    showUnselectedLabels: true,
+    type: BottomNavigationBarType.fixed,
+    selectedIconTheme: IconThemeData(
+      color: Colors.blueAccent[400],
+    ),
+    selectedLabelStyle: const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+    ),
+    unselectedLabelStyle: const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+    ),
+    unselectedIconTheme: const IconThemeData(
+      color: Colors.grey,
+    ),
+  );
+
   static InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
@@ -76,6 +100,7 @@ abstract final class AppTheme {
     outlinedButtonTheme: outlinedButtonStyle,
     iconButtonTheme: iconButtonStyle,
     bottomSheetTheme: bottomSheetTheme,
+    bottomNavigationBarTheme: bottomNavigationBarTheme,
     fontFamily: 'Montserrat',
     extensions: const [],
   );

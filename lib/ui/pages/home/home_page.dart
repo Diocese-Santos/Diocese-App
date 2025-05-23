@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
     final statusBarHeight = MediaQuery.of(context).viewPadding.top;
 
     return PageContainer(
+      showBottomNavigationBar: true,
       children: [
         Header(
           padding: EdgeInsets.only(
