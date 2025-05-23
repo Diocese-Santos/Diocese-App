@@ -33,6 +33,7 @@ abstract final class AppTheme {
 
   static OutlinedButtonThemeData outlinedButtonStyle = OutlinedButtonThemeData(
     style: ButtonStyle(
+      fixedSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
       foregroundColor: WidgetStateProperty.all(Colors.blue),
       side: WidgetStateProperty.all(BorderSide(color: Colors.blue)),
       shape: WidgetStateProperty.all(

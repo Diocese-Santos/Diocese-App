@@ -1,4 +1,5 @@
 import 'package:diocese_santos/presentation/presenters/home_presenter.dart';
+import 'package:diocese_santos/ui/pages/home/widgets/daily_liturgy.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/liturgical_informations.dart';
 import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:diocese_santos/ui/widgets/page_container.dart';
@@ -73,7 +74,9 @@ class _HomePageState extends State<HomePage> {
           date: widget.presenter.liturgicalDate,
           week: widget.presenter.liturgicalWeek,
           color: widget.presenter.liturgicalColor,
-        )
+        ),
+        Gap(8),
+        DailyLiturgy(),
       ],
     );
   }
