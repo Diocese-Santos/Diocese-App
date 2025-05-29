@@ -47,6 +47,7 @@ abstract final class AppTheme {
 
   static FilledButtonThemeData filledButtonStyle = FilledButtonThemeData(
     style: ButtonStyle(
+      fixedSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
       backgroundColor: WidgetStateProperty.all(Colors.blue),
       shape: WidgetStateProperty.all(
         RoundedRectangleBorder(

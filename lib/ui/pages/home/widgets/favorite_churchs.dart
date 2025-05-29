@@ -23,52 +23,76 @@ class FavoriteChurchs extends StatelessWidget {
         SizedBox(
           height: 180,
           child: ListView.separated(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             separatorBuilder: (context, index) => const Gap(8),
             scrollDirection: Axis.horizontal,
             itemCount: 5,
             itemBuilder: (context, index) {
-              return SizedBox(
-                width: 140,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        'assets/paroquia.png',
-                        width: 140,
+              return InkWell(
+                onTap: () {},
+                child: SizedBox(
+                  width: 140,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          'assets/paroquia.png',
+                          width: 140,
+                        ),
                       ),
-                    ),
-                    Gap(14),
-                    Text(
-                      'Paróquia São José Operário',
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            fontWeight: FontWeight.w400,
-                            color: Colors.grey.shade900,
+                      Gap(14),
+                      Text(
+                        'Paróquia São José Operário',
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey.shade900,
+                            ),
+                      ),
+                      Gap(4),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.location_on_outlined,
+                            size: 16,
+                            color: Colors.yellow.shade600,
                           ),
-                    ),
-                    Gap(4),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.location_on_outlined,
-                          size: 16,
-                          color: Colors.yellow.shade600,
-                        ),
-                        Gap(2),
-                        Text(
-                          'Peruíbe',
-                          style:
-                              Theme.of(context).textTheme.labelSmall!.copyWith(
-                                    color: Colors.grey.shade600,
-                                  ),
-                        ),
-                      ],
-                    ),
-                  ],
+                          Gap(2),
+                          Text(
+                            'Peruíbe',
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelSmall!
+                                .copyWith(
+                                  color: Colors.grey.shade600,
+                                ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
+          ),
+        ),
+        Gap(24),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: SizedBox(
+            height: 48,
+            width: double.infinity,
+            child: FilledButton(
+              onPressed: () {},
+              child: Text(
+                'Explorar Novas Paróquias',
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+              ),
+            ),
           ),
         ),
       ],
