@@ -1,6 +1,7 @@
 // coverage:ignore-file
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 abstract final class AppTheme {
   static BottomNavigationBarThemeData bottomNavigationBarTheme =
@@ -101,7 +102,21 @@ abstract final class AppTheme {
     iconButtonTheme: iconButtonStyle,
     bottomSheetTheme: bottomSheetTheme,
     bottomNavigationBarTheme: bottomNavigationBarTheme,
-    fontFamily: 'Montserrat',
+    fontFamily: GoogleFonts.roboto().fontFamily,
+    textTheme: TextTheme(
+      titleLarge: TextStyle(
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+        fontWeight: FontWeight.w600,
+      ),
+      titleMedium: TextStyle(
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+        fontWeight: FontWeight.w600,
+      ),
+      titleSmall: TextStyle(
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
     extensions: const [],
   );
 

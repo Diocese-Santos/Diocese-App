@@ -1,11 +1,13 @@
 import 'package:diocese_santos/presentation/presenters/home_presenter.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/daily_liturgy.dart';
+import 'package:diocese_santos/ui/pages/home/widgets/favorite_churchs.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/liturgical_informations.dart';
 import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:diocese_santos/ui/widgets/page_container.dart';
 import 'package:diocese_santos/ui/widgets/user_info_header.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -47,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               Gap(32),
               Text(
                 'Explore a Diocese de Santos',
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
                     ),
@@ -79,6 +81,8 @@ class _HomePageState extends State<HomePage> {
         ),
         Gap(8),
         DailyLiturgy(),
+        Gap(16),
+        FavoriteChurchs(),
       ],
     );
   }
