@@ -2,6 +2,7 @@ import 'package:diocese_santos/presentation/presenters/home_presenter.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/daily_liturgy.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/favorite_churchs.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/liturgical_informations.dart';
+import 'package:diocese_santos/ui/widgets/custom_divider.dart';
 import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:diocese_santos/ui/widgets/page_container.dart';
 import 'package:diocese_santos/ui/widgets/user_info_header.dart';
@@ -83,6 +84,8 @@ class _HomePageState extends State<HomePage> {
         DailyLiturgy(),
         Gap(16),
         FavoriteChurchs(),
+        CustomDivider(),
+        CustomDivider(),
       ],
     );
   }
