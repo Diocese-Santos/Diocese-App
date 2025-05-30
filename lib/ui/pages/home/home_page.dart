@@ -1,4 +1,5 @@
 import 'package:diocese_santos/presentation/presenters/home_presenter.dart';
+import 'package:diocese_santos/ui/pages/home/widgets/confession_assistants.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/daily_liturgy.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/favorite_churchs.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/liturgical_informations.dart';
@@ -8,7 +9,6 @@ import 'package:diocese_santos/ui/widgets/page_container.dart';
 import 'package:diocese_santos/ui/widgets/user_info_header.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -85,6 +85,7 @@ class _HomePageState extends State<HomePage> {
         Gap(16),
         FavoriteChurchs(),
         CustomDivider(),
+        ConfessionAssistants(),
         CustomDivider(),
       ],
     );
