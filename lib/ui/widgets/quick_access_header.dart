@@ -1,5 +1,7 @@
+import 'package:diocese_santos/main/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 class QuickAccessHeader extends StatelessWidget {
   const QuickAccessHeader({super.key});
@@ -37,7 +39,7 @@ class QuickAccessHeader extends StatelessWidget {
             _ConfissionButon(
               title: 'Histório',
               imagePath: 'assets/history_book.png',
-              onPressed: () {},
+              onPressed: () => context.push(Routes.history),
             ),
           ],
         ),
@@ -67,7 +69,7 @@ class _ConfissionButon extends StatelessWidget {
     final buttonWidth = (screenWidth / 3) - totalPadding;
 
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: OutlinedButton.styleFrom(
         fixedSize: Size(buttonWidth, 92),
         side: BorderSide(color: Colors.transparent),

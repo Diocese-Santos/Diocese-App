@@ -1,4 +1,5 @@
 import 'package:diocese_santos/main/factories/ui/pages/forgot_password_page_factory.dart';
+import 'package:diocese_santos/main/factories/ui/pages/history_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/home_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/login_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/onboarding_page_factory.dart';
@@ -42,6 +43,10 @@ GoRouter router() => GoRouter(
         GoRoute(
           path: Routes.home,
           builder: (_, __) => makeHomePage(),
-        )
+        ),
+        GoRoute(
+          path: Routes.history,
+          builder: (_, __) => makeHistoryPage(),
+        ),
       ],
     );
