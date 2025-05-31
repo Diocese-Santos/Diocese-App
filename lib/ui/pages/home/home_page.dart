@@ -36,64 +36,73 @@ class _HomePageState extends State<HomePage> {
 
     return PageContainer(
       showBottomNavigationBar: true,
-      children: [
-        Stack(
-          children: [
-            Header(
-              padding: EdgeInsets.only(
-                left: 24,
-                top: 10 + statusBarHeight,
-                right: 24,
-                bottom: 40,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  UserInfoHeader(),
-                  Gap(32),
-                  Text(
-                    'Explore a Diocese de Santos',
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
+      child: Stack(
+        children: [
+          Column(
+            children: [
+              Header(
+                padding: EdgeInsets.only(
+                  left: 24,
+                  top: 10 + statusBarHeight,
+                  right: 24,
+                  bottom: 40,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    UserInfoHeader(),
+                    Gap(32),
+                    Text(
+                      'Explore a Diocese de Santos',
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                    Gap(16),
+                    SizedBox(
+                      height: 54,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          hintText: 'O que você deseja encontrar?',
+                          hintStyle: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                          ),
+                          prefixIcon: const Icon(Icons.search),
+                          prefixIconColor: Colors.blueAccent,
+                          fillColor: Colors.white,
                         ),
-                  ),
-                  Gap(16),
-                  SizedBox(
-                    height: 54,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        filled: true,
-                        hintText: 'O que você deseja encontrar?',
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 14,
-                        ),
-                        prefixIcon: const Icon(Icons.search),
-                        prefixIconColor: Colors.blueAccent,
-                        fillColor: Colors.white,
                       ),
                     ),
-                  ),
-                ],
+                    Gap(32),
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
-        QuickAccessHeader(),
-        LiturgicalInformations(
-          date: widget.presenter.liturgicalDate,
-          week: widget.presenter.liturgicalWeek,
-          color: widget.presenter.liturgicalColor,
-        ),
-        Gap(8),
-        DailyLiturgy(),
-        Gap(16),
-        FavoriteChurchs(),
-        CustomDivider(),
-        ConfessionAssistants(),
-        CustomDivider(),
-      ],
+              Gap(54),
+              LiturgicalInformations(
+                date: widget.presenter.liturgicalDate,
+                week: widget.presenter.liturgicalWeek,
+                color: widget.presenter.liturgicalColor,
+              ),
+              Gap(8),
+              DailyLiturgy(),
+              Gap(16),
+              FavoriteChurchs(),
+              CustomDivider(),
+              ConfessionAssistants(),
+              CustomDivider(),
+            ],
+          ),
+          Positioned(
+            top: 270,
+            left: 8,
+            right: 8,
+            child: QuickAccessHeader(),
+          ),
+        ],
+      ),
     );
   }
 }

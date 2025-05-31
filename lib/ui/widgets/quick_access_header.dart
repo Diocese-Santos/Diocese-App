@@ -14,13 +14,14 @@ class QuickAccessHeader extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.shade300,
+              color: Colors.grey.shade400,
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),
           ],
         ),
         child: Row(
+          mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _ConfissionButon(

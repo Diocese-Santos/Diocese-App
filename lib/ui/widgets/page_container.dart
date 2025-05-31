@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class PageContainer extends StatelessWidget {
   const PageContainer({
     super.key,
-    required this.children,
+    this.child,
+    this.children,
     this.isAFormPage = false,
     this.showBottomNavigationBar = false,
   });
 
-  final List<Widget> children;
+  final List<Widget>? children;
+  final Widget? child;
   final bool isAFormPage;
   final bool showBottomNavigationBar;
 
@@ -40,9 +42,10 @@ class PageContainer extends StatelessWidget {
             child: ConstrainedBox(
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: IntrinsicHeight(
-                child: isAFormPage
-                    ? Form(child: Column(children: children))
-                    : Column(children: children),
+                child: child ??
+                    (isAFormPage
+                        ? Form(child: Column(children: children ?? []))
+                        : Column(children: children ?? [])),
               ),
             ),
           );
