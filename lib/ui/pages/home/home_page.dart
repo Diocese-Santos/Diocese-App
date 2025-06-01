@@ -2,11 +2,14 @@ import 'package:diocese_santos/presentation/presenters/home_presenter.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/confession_assistants.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/daily_liturgy.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/favorite_churchs.dart';
+import 'package:diocese_santos/ui/pages/home/widgets/list_of_masses.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/liturgical_informations.dart';
 import 'package:diocese_santos/ui/widgets/custom_divider.dart';
 import 'package:diocese_santos/ui/widgets/header.dart';
+import 'package:diocese_santos/ui/widgets/information_card.dart';
 import 'package:diocese_santos/ui/widgets/page_container.dart';
 import 'package:diocese_santos/ui/widgets/quick_access_header.dart';
+import 'package:diocese_santos/ui/widgets/subtitle_section.dart';
 import 'package:diocese_santos/ui/widgets/user_info_header.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -90,6 +93,8 @@ class _HomePageState extends State<HomePage> {
               DailyLiturgy(),
               Gap(16),
               FavoriteChurchs(),
+              CustomDivider(),
+              ListOfMasses(),
               CustomDivider(),
               ConfessionAssistants(),
               CustomDivider(),
