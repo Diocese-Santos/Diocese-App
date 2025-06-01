@@ -27,11 +27,21 @@ class InformationCard extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 2, horizontal: 8),
-                  child: Text(
-                    'Acontecendo',
-                    style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                          color: Colors.white,
-                        ),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.circle,
+                        color: Colors.white,
+                        size: 8,
+                      ),
+                      Gap(4),
+                      Text(
+                        'Acontecendo',
+                        style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                              color: Colors.white,
+                            ),
+                      ),
+                    ],
                   ),
                 ),
               ),
