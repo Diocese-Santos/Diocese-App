@@ -1,8 +1,14 @@
+import 'package:diocese_santos/presentation/presenters/home_presenter.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class FavoriteChurchs extends StatelessWidget {
-  const FavoriteChurchs({super.key});
+  const FavoriteChurchs({
+    super.key,
+    required this.churchs,
+  });
+
+  final List<ChurchViewModel> churchs;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +32,7 @@ class FavoriteChurchs extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             separatorBuilder: (context, index) => const Gap(8),
             scrollDirection: Axis.horizontal,
-            itemCount: 5,
+            itemCount: churchs.length,
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {},
@@ -37,14 +43,16 @@ class FavoriteChurchs extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/paroquia.png',
+                        child: Image.network(
+                          churchs[index].image,
+                          height: 100,
                           width: 140,
+                          fit: BoxFit.cover,
                         ),
                       ),
                       Gap(14),
                       Text(
-                        'Paróquia São José Operário',
+                        churchs[index].name,
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               fontWeight: FontWeight.w400,
                               color: Colors.grey.shade900,
@@ -60,7 +68,7 @@ class FavoriteChurchs extends StatelessWidget {
                           ),
                           Gap(2),
                           Text(
-                            'Peruíbe',
+                            churchs[index].city,
                             style: Theme.of(context)
                                 .textTheme
                                 .labelSmall!

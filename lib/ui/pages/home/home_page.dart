@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                     Gap(8),
                     DailyLiturgy(),
                     Gap(16),
-                    FavoriteChurchs(),
+                    FavoriteChurchs(churchs: viewModel.churchs),
                     CustomDivider(),
                     ListOfMasses(),
                     ListOfConfession(),
