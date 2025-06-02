@@ -50,7 +50,6 @@ class _HomePageState extends State<HomePage> {
             return Center(child: const CircularProgressIndicator());
           }
           if (snapshot.hasError) {
-            print('Error: ${snapshot.error}');
             return Center(child: Text('Erro: ${snapshot.error}'));
           }
 
