@@ -54,3 +54,31 @@ $ flutter run
 
 # Well done, Diocese App is started!
 ```
+
+### Project Structure
+
+```
+lib/
+│── domain/ # Regras de negócio e entidades
+│ └── entities/
+│
+├── infra/ # Implementações técnicas (API, repositórios, etc)
+│ ├── api/
+│ ├── repositories/
+│ └── tracking/
+│
+├── main/ # Entry point da aplicação e configurações principais
+│ ├── factories/
+│ ├── routing/
+│ └── main.dart
+│
+├── presentation/ # Lógica de apresentação (Presenters)
+│ └── presenters/
+│ └── rx/ # Implementações reativas dos presenters
+│ └── \*.dart
+│
+├── ui/ # Interface de usuário
+│  └── core/ # Temas, estilos e componentes base
+│  └── pages/ # Telas da aplicação
+│  └── widgets/ # Componentes reutilizáveis
+```
