@@ -1,12 +1,12 @@
 <div align="center">
   <img src=".github/assets/diocese_santos_logo.png" width="150" />
   <h1>Diocese Santos</h1>
-  <p>⛪ Application of the Catholic Diocese of Santos ⛪</p>
+  <p>⛪ Aplicativo da Diocese Católica de Santos ⛪</p>
 </div>
 
 # 👀 About
 
-All the information about the Catholic Diocese of Santos in the palm of your hand. Favorite your parish, find out about the times and updates on masses and confessionals, and much more.
+Todas informações sobre a Diocese Católica de Santos da palma de suas mãos. Favorite sua paróquia, encontre os horários e atualizções sobre suas missas e confissões, e muito mais.
 
 <div align="center">
   <img src=".github/assets/cover.png" width="700" /> 
@@ -15,47 +15,47 @@ All the information about the Catholic Diocese of Santos in the palm of your han
 <br>
 <br>
 
-# 🚀 Technologies
+# 🚀 Tecnologias
 
 - [Flutter](https://flutter.dev/)
 - [Segment](https://segment.com/)
 - [Go Router](https://pub.dev/packages/go_router)
 - [Rx Dart](https://pub.dev/packages/rxdart)
 
-## 💻 Getting started
+## 💻 Começando
 
-### Requirements
+### Requisitos
 
 - [Flutter SDK](https://flutter.dev/docs/get-started/install)
 - [Android Studio](https://developer.android.com/studio?hl=pt-br) or [XCode](https://developer.apple.com/xcode/)
 - [Yarn](https://classic.yarnpkg.com/) or [NPM](https://www.npmjs.com/)
 
-### Installing and running the project
+### Instalando e executando o projeto
 
-_Clone the project and access the folder_
+_Clone o projeto e acesse a pasta_
 
 ```bash
 $ git clone git@github.com:Diocese-Santos/Diocese-App.git
 $ cd Diocese-App
 ```
 
-_Follow the steps below_
+_Siga as etapas abaixo_
 
 ```bash
-# Install the dependencies
+# Instalando as depedências
 $ flutter pub get
 
-# Make a copy of '.env.example' to '.env'
-# and set with YOUR environment variables.
+# Faça uma cópia de '.env.example' para '.env'
+# e atribua as SUAS variáveis de ambiente
 $ cp .env.example .env
 
-# Finally, run the api service in a development environment :)
+# Finalmente, rode o aplicativo =)
 $ flutter run
 
-# Well done, Diocese App is started!
+# Pronto, o aplicativo da Diocese está rodando!
 ```
 
-### Project Structure
+### Estrutura do projeto
 
 ```
 lib/
