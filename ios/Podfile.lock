@@ -37,12 +37,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_fgbg: 31c0d1140a131daea2d342121808f6aa0dcd879d
-  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  segment_analytics: a61c1cc29c38702387cfc6bbe5261690d78b2aa0
-  shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
-  url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
+  flutter_fgbg: d3da78df78454b1808f0829a5da9cd17dfe16444
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  segment_analytics: 74650ab14e31db0a16a1599dbc11aabd644192a6
+  shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
+  url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
 
 PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

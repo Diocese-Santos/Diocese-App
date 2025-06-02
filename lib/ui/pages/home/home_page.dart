@@ -2,6 +2,7 @@ import 'package:diocese_santos/presentation/presenters/home_presenter.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/confession_assistants.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/daily_liturgy.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/favorite_churchs.dart';
+import 'package:diocese_santos/ui/pages/home/widgets/list_of_confession.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/list_of_masses.dart';
 import 'package:diocese_santos/ui/pages/home/widgets/liturgical_informations.dart';
 import 'package:diocese_santos/ui/widgets/custom_divider.dart';
@@ -95,7 +96,7 @@ class _HomePageState extends State<HomePage> {
               FavoriteChurchs(),
               CustomDivider(),
               ListOfMasses(),
-              CustomDivider(),
+              ListOfConfession(),
               ConfessionAssistants(),
               CustomDivider(),
             ],

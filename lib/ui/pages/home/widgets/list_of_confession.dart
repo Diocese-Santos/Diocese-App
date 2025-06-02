@@ -3,8 +3,8 @@ import 'package:diocese_santos/ui/widgets/subtitle_section.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class ListOfMasses extends StatelessWidget {
-  const ListOfMasses({super.key});
+class ListOfConfession extends StatelessWidget {
+  const ListOfConfession({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class ListOfMasses extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SubtitleSection(title: 'Missas'),
+          SubtitleSection(title: 'Confissões'),
           Gap(24),
           InformationCard(),
           Gap(16),
