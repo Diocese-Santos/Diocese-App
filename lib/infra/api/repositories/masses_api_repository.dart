@@ -13,10 +13,17 @@ final class MassesApiRepository {
       ),
       Event(
         distance: '10 km',
-        title: 'Missa de Domingo',
+        title: 'Missa de Sábado',
         endTime: '12:00',
         startTime: '10:00',
-        celebrant: 'Padre João',
+        celebrant: 'Padre Thiago Ferauche',
+      ),
+      Event(
+        distance: '10 km',
+        title: 'Missa de Sexta',
+        endTime: '15:00',
+        startTime: '13:00',
+        celebrant: 'Padre Apolinário',
       ),
     ];
   }

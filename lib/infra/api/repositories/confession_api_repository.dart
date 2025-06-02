@@ -6,13 +6,13 @@ final class ConfessionApiRepository {
     return [
       Event(
         distance: '10 km',
-        title: 'Confissão',
+        title: 'Paróquia São José Operário',
         endTime: '12:00',
         startTime: '10:00',
       ),
       Event(
         distance: '10 km',
-        title: 'Confissão',
+        title: 'Paróquia Imaculado coração de Maria',
         endTime: '12:00',
         startTime: '10:00',
       ),

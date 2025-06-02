@@ -2,7 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class InformationCard extends StatelessWidget {
-  const InformationCard({super.key});
+  const InformationCard({
+    required this.title,
+    required this.startTime,
+    required this.endTime,
+    required this.distance,
+    this.celebrant,
+    super.key,
+  });
+
+  final String title;
+  final String startTime;
+  final String endTime;
+  final String distance;
+  final String? celebrant;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +85,7 @@ class InformationCard extends StatelessWidget {
           ),
           Gap(12),
           Text(
-            'Paróquia São José Operário',
+            title,
             style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
@@ -80,8 +93,8 @@ class InformationCard extends StatelessWidget {
           Gap(8),
           Row(
             children: [
-              const Text(
-                '16:00 até 18:30',
+              Text(
+                '$startTime até $endTime',
                 style: TextStyle(color: Colors.grey),
               ),
               Gap(8),
@@ -92,18 +105,19 @@ class InformationCard extends StatelessWidget {
               Gap(8),
               const Icon(Icons.directions_run, size: 16, color: Colors.grey),
               Gap(4),
-              const Text(
-                '1.2 km',
+              Text(
+                distance,
                 style: TextStyle(color: Colors.grey),
               ),
             ],
           ),
           const SizedBox(height: 8),
-          // Celebrante
-          const Text(
-            'Celebrante: Padre Ednei Barbosa',
-            style: TextStyle(color: Colors.grey),
-          ),
+          celebrant != null
+              ? Text(
+                  'Celebrante: $celebrant',
+                  style: TextStyle(color: Colors.grey),
+                )
+              : const SizedBox.shrink(),
         ],
       ),
     );
