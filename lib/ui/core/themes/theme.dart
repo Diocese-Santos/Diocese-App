@@ -1,8 +1,33 @@
 // coverage:ignore-file
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 abstract final class AppTheme {
+  static BottomNavigationBarThemeData bottomNavigationBarTheme =
+      BottomNavigationBarThemeData(
+    backgroundColor: Colors.white,
+    selectedItemColor: Colors.blueAccent[400],
+    unselectedItemColor: Colors.grey.shade400,
+    showSelectedLabels: true,
+    showUnselectedLabels: true,
+    type: BottomNavigationBarType.fixed,
+    selectedIconTheme: IconThemeData(
+      color: Colors.blueAccent[400],
+    ),
+    selectedLabelStyle: const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+    ),
+    unselectedLabelStyle: const TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+    ),
+    unselectedIconTheme: const IconThemeData(
+      color: Colors.grey,
+    ),
+  );
+
   static InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
@@ -22,6 +47,7 @@ abstract final class AppTheme {
 
   static FilledButtonThemeData filledButtonStyle = FilledButtonThemeData(
     style: ButtonStyle(
+      fixedSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
       backgroundColor: WidgetStateProperty.all(Colors.blue),
       shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
@@ -33,6 +59,7 @@ abstract final class AppTheme {
 
   static OutlinedButtonThemeData outlinedButtonStyle = OutlinedButtonThemeData(
     style: ButtonStyle(
+      fixedSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
       foregroundColor: WidgetStateProperty.all(Colors.blue),
       side: WidgetStateProperty.all(BorderSide(color: Colors.blue)),
       shape: WidgetStateProperty.all(
@@ -75,7 +102,22 @@ abstract final class AppTheme {
     outlinedButtonTheme: outlinedButtonStyle,
     iconButtonTheme: iconButtonStyle,
     bottomSheetTheme: bottomSheetTheme,
-    fontFamily: 'Montserrat',
+    bottomNavigationBarTheme: bottomNavigationBarTheme,
+    fontFamily: GoogleFonts.roboto().fontFamily,
+    textTheme: TextTheme(
+      titleLarge: TextStyle(
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+        fontWeight: FontWeight.w600,
+      ),
+      titleMedium: TextStyle(
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+        fontWeight: FontWeight.w600,
+      ),
+      titleSmall: TextStyle(
+        fontFamily: GoogleFonts.montserrat().fontFamily,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
     extensions: const [],
   );
 
