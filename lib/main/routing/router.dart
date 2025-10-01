@@ -13,7 +13,7 @@ import 'package:segment_analytics/client.dart';
 import 'routes.dart';
 
 GoRouter router() => GoRouter(
-      initialLocation: Routes.home,
+      initialLocation: Routes.onboarding,
       debugLogDiagnostics: true,
       observers: [
         ScreenObserver(),

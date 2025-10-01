@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "912136796335",
+    "project_id": "diocese-santos-cdb2a",
+    "storage_bucket": "diocese-santos-cdb2a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912136796335:android:943d1d744afd2ba32dbc5a",
+        "android_client_info": {
+          "package_name": "com.example.diocese_santos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-zpYGEzbrdEJZ-bfXvTrkeHpFsnUV37M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

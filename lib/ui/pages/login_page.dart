@@ -5,6 +5,7 @@ import 'package:diocese_santos/ui/widgets/page_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key, required this.presenter});
@@ -119,7 +120,33 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Gap(38),
+              Gap(14),
+              Divider(
+                color: Colors.grey.shade300,
+                thickness: 1,
+              ),
+              Gap(14),
+              SizedBox(
+                height: 48,
+                width: double.infinity,
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Colors.red,
+                  ),
+                  onPressed: () {
+                    GoogleSignIn.instance.authenticate();
+                    context.push(Routes.home);
+                  },
+                  child: Text(
+                    'Login com Google',
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                ),
+              ),
+              Gap(24),
               TextButton(
                 onPressed: () => context.push(Routes.registerBasicData),
                 child: Text.rich(
