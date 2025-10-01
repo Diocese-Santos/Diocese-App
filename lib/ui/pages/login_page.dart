@@ -5,7 +5,6 @@ import 'package:diocese_santos/ui/widgets/page_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key, required this.presenter});
@@ -133,10 +132,7 @@ class LoginPage extends StatelessWidget {
                   style: FilledButton.styleFrom(
                     backgroundColor: Colors.red,
                   ),
-                  onPressed: () {
-                    GoogleSignIn.instance.authenticate();
-                    context.push(Routes.home);
-                  },
+                  onPressed: presenter.signInWithGoogle,
                   child: Text(
                     'Login com Google',
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
