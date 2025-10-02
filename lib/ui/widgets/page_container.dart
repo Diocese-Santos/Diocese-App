@@ -18,11 +18,24 @@ class PageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int currentIndex() {
+      final String location = GoRouterState.of(context).uri.toString();
+      if (location == Routes.home) {
+        return 0;
+      } else if (location == Routes.churches) {
+        return 1;
+      } else if (location == Routes.history) {
+        return 2;
+      }
+      return 0;
+    }
+
     return Scaffold(
       backgroundColor: Color(0xffFCFCFC),
       bottomNavigationBar:
           showBottomNavigationBar
               ? BottomNavigationBar(
+                currentIndex: currentIndex(),
                 onTap: (index) {
                   switch (index) {
                     case 0:
