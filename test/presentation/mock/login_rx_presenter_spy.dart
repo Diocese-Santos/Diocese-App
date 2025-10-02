@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:diocese_santos/presentation/presenters/login_presenter.dart';
+import 'package:rxdart/rxdart.dart';
 
 final class LoginPresenterSpy implements LoginPresenter {
   int signInCount = 0;
@@ -14,11 +17,17 @@ final class LoginPresenterSpy implements LoginPresenter {
     authenticateWithGoogleCount++;
   }
 
-  @override
-  // TODO: implement isBusyStream
-  Stream<bool> get isBusyStream => throw UnimplementedError();
+  final _isBusyController = BehaviorSubject<bool>.seeded(false);
+  final _loginController = BehaviorSubject<LoginViewModel>();
 
   @override
-  // TODO: implement loginStream
-  Stream<LoginViewModel> get loginStream => throw UnimplementedError();
+  Stream<bool> get isBusyStream => _isBusyController.stream;
+
+  @override
+  Stream<LoginViewModel> get loginStream => _loginController.stream;
+
+  void emitIsBusy(bool value) => _isBusyController.add(value);
+
+  void emitLoginViewModel(LoginViewModel viewModel) =>
+      _loginController.add(viewModel);
 }
