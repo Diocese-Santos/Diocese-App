@@ -10,6 +10,7 @@ abstract class HomePresenter {
   Future<void> loadConfession();
 
   Future<void> loadUserData();
+  Future<void> logout();
 }
 
 final class HomeViewModel {

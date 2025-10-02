@@ -7,4 +7,7 @@ abstract interface class StorageClient {
   /// [key] is the key to store the value
   /// [value] is the value to store
   void setString(String key, String value);
+
+  /// Clear all values
+  void clear();
 }

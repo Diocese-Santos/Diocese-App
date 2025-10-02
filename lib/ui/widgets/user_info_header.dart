@@ -1,13 +1,17 @@
+import 'package:diocese_santos/main/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 class UserInfoHeader extends StatelessWidget {
   final String userName;
   final String userPhotoUrl;
+  final Function() onLogout;
 
   const UserInfoHeader({
     required this.userName,
     required this.userPhotoUrl,
+    required this.onLogout,
     super.key,
   });
 
@@ -50,6 +54,21 @@ class UserInfoHeader extends StatelessWidget {
               ],
             ),
           ],
+        ),
+        OutlinedButton(
+          style: OutlinedButton.styleFrom(
+              side: BorderSide(color: Colors.lightBlue[200]!),
+              shape: CircleBorder(),
+              fixedSize: Size(18, 18)),
+          onPressed: () {
+            onLogout();
+            context.push(Routes.login);
+          },
+          child: Icon(
+            Icons.logout,
+            color: Colors.white,
+            size: 16,
+          ),
         ),
       ],
     );

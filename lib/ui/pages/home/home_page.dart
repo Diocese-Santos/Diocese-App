@@ -72,6 +72,9 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           UserInfoHeader(
+                            onLogout: () {
+                              widget.presenter.logout();
+                            },
                             userName: viewModel.user.name,
                             userPhotoUrl: viewModel.user.photoUrl ?? '',
                           ),

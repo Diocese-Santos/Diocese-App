@@ -44,6 +44,11 @@ class HomeRxPresenter implements HomePresenter {
   }
 
   @override
+  Future<void> logout() async {
+    storageClient.clear();
+  }
+
+  @override
   Future<void> loadChurchs() async {
     try {
       final churchs = await churchsLoader();

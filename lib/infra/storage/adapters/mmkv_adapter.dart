@@ -16,4 +16,9 @@ final class MMMKVAdapter implements StorageClient {
   void setString(String key, String value) {
     client.encodeString(key, value);
   }
+
+  @override
+  void clear() {
+    client.clearAll();
+  }
 }
