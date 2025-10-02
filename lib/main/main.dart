@@ -25,7 +25,9 @@ Future main() async {
     } else {
       Firebase.app();
     }
-  } catch (e) {}
+  } catch (e) {
+    debugPrint(e.toString());
+  }
 
   runApp(const MyApp());
 }
