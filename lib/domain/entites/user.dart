@@ -10,4 +10,11 @@ final class User {
     required this.email,
     this.photoUrl,
   });
+
+  factory User.empty() => User(
+        id: '',
+        name: '',
+        email: '',
+        photoUrl: null,
+      );
 }
