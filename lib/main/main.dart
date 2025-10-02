@@ -14,13 +14,17 @@ Future main() async {
 
   await dotenv.load(fileName: ".env");
 
-  if (Firebase.apps.isEmpty) {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-  } else {
-    Firebase.app();
-  }
+  //makeSegmentAdapter();
+
+  try {
+    if (Firebase.apps.isEmpty) {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    } else {
+      Firebase.app();
+    }
+  } catch (e) {}
 
   runApp(const MyApp());
 }

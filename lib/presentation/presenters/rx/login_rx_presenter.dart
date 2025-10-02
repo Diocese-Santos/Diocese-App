@@ -1,20 +1,24 @@
 import 'dart:async';
 
+import 'package:diocese_santos/domain/entites/user.dart';
 import 'package:diocese_santos/presentation/presenters/login_presenter.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginRxPresenter implements LoginPresenter {
+  final Future<User> Function() signInWithGoogle;
+
+  LoginRxPresenter({required this.signInWithGoogle});
+
   @override
   void signIn() {}
 
   @override
-  Future<void> signInWithGoogle() async {
-    final googleUser = await GoogleSignIn.instance.authenticate();
+  Future<void> authenticateWithGoogle() async {
+    final googleUser = await signInWithGoogle();
 
     if (googleUser != null) {
       print(googleUser.id);
       print(googleUser.email);
-      print(googleUser.displayName);
+      print(googleUser.name);
       print(googleUser.photoUrl);
     }
   }

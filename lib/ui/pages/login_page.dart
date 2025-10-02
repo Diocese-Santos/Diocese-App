@@ -132,7 +132,7 @@ class LoginPage extends StatelessWidget {
                   style: FilledButton.styleFrom(
                     backgroundColor: Colors.red,
                   ),
-                  onPressed: presenter.signInWithGoogle,
+                  onPressed: presenter.authenticateWithGoogle,
                   child: Text(
                     'Login com Google',
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(

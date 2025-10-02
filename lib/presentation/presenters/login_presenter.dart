@@ -1,5 +1,5 @@
 abstract class LoginPresenter {
   void signIn();
 
-  Future<void> signInWithGoogle();
+  Future<void> authenticateWithGoogle();
 }
