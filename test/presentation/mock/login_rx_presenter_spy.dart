@@ -2,7 +2,7 @@ import 'package:diocese_santos/presentation/presenters/login_presenter.dart';
 
 final class LoginPresenterSpy implements LoginPresenter {
   int signInCount = 0;
-  int signInWithGoogleCount = 0;
+  int authenticateWithGoogleCount = 0;
 
   @override
   void signIn() {
@@ -10,7 +10,15 @@ final class LoginPresenterSpy implements LoginPresenter {
   }
 
   @override
-  Future<void> signInWithGoogle() async {
-    signInWithGoogleCount++;
+  Future<void> authenticateWithGoogle() async {
+    authenticateWithGoogleCount++;
   }
+
+  @override
+  // TODO: implement isBusyStream
+  Stream<bool> get isBusyStream => throw UnimplementedError();
+
+  @override
+  // TODO: implement loginStream
+  Stream<LoginViewModel> get loginStream => throw UnimplementedError();
 }
