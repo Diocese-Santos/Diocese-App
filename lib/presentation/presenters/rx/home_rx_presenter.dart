@@ -1,6 +1,8 @@
 import 'package:diocese_santos/domain/entites/church.dart';
 import 'package:diocese_santos/domain/entites/event.dart';
 import 'package:diocese_santos/domain/entites/liturgical_information.dart';
+import 'package:diocese_santos/domain/entites/user.dart';
+import 'package:diocese_santos/infra/storage/client/storage_client.dart';
 import 'package:diocese_santos/presentation/presenters/home_presenter.dart';
 
 import 'package:rxdart/subjects.dart';
@@ -10,6 +12,7 @@ class HomeRxPresenter implements HomePresenter {
   final Future<List<Church>> Function() churchsLoader;
   final Future<List<Event>> Function() confessionLoader;
   final Future<List<Event>> Function() massesLoader;
+  final StorageClient storageClient;
 
   final homeSubject =
       BehaviorSubject<HomeViewModel>.seeded(HomeViewModel.empty());
@@ -20,12 +23,25 @@ class HomeRxPresenter implements HomePresenter {
     required this.churchsLoader,
     required this.massesLoader,
     required this.confessionLoader,
+    required this.storageClient,
   });
 
   @override
   Stream<HomeViewModel> get homeStream => homeSubject.stream;
   @override
   Stream<bool> get isBusyStream => isBusySubject.stream;
+
+  @override
+  Future<void> loadUserData() async {
+    final user = storageClient.getString('user_id');
+    homeSubject.add(homeSubject.value.copyWith(
+        user: User(
+      id: user,
+      name: storageClient.getString('user_name'),
+      email: storageClient.getString('user_email'),
+      photoUrl: storageClient.getString('user_photo_url'),
+    )));
+  }
 
   @override
   Future<void> loadChurchs() async {

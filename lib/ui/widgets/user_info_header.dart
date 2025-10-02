@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class UserInfoHeader extends StatelessWidget {
-  const UserInfoHeader({super.key});
+  final String userName;
+  final String userPhotoUrl;
+
+  const UserInfoHeader({
+    required this.userName,
+    required this.userPhotoUrl,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +24,7 @@ class UserInfoHeader extends StatelessWidget {
               backgroundColor: Colors.lightBlueAccent[100],
               child: CircleAvatar(
                 radius: 24,
-                backgroundImage: const AssetImage('assets/papa.png'),
+                backgroundImage: NetworkImage(userPhotoUrl),
                 backgroundColor: Theme.of(context).colorScheme.primary,
               ),
             ),
@@ -26,7 +33,7 @@ class UserInfoHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Papa Pio X',
+                  userName,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontWeight: FontWeight.w600,
                         color: Colors.white,

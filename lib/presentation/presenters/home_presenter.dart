@@ -1,3 +1,5 @@
+import 'package:diocese_santos/domain/entites/user.dart';
+
 abstract class HomePresenter {
   Stream<HomeViewModel> get homeStream;
   Stream<bool> get isBusyStream;
@@ -6,15 +8,20 @@ abstract class HomePresenter {
   Future<void> loadChurchs();
   Future<void> loadMasses();
   Future<void> loadConfession();
+
+  Future<void> loadUserData();
 }
 
 final class HomeViewModel {
+  final User user;
+
   final LiturgicalInformationsViewModel liturgicalInformations;
   final List<ChurchViewModel> churchs;
   final List<EventViewModel> masses;
   final List<EventViewModel> confession;
 
   const HomeViewModel({
+    required this.user,
     required this.liturgicalInformations,
     required this.churchs,
     required this.confession,
@@ -22,6 +29,7 @@ final class HomeViewModel {
   });
 
   factory HomeViewModel.empty() => HomeViewModel(
+        user: User.empty(),
         churchs: [],
         masses: [],
         confession: [],
@@ -37,8 +45,10 @@ final class HomeViewModel {
     List<ChurchViewModel>? churchs,
     List<EventViewModel>? masses,
     List<EventViewModel>? confession,
+    User? user,
   }) {
     return HomeViewModel(
+      user: user ?? this.user,
       liturgicalInformations:
           liturgicalInformations ?? this.liturgicalInformations,
       churchs: churchs ?? this.churchs,

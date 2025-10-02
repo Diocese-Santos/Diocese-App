@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    widget.presenter.loadUserData();
     widget.presenter.loadMasses();
     widget.presenter.loadChurchs();
     widget.presenter.loadConfession();
@@ -70,7 +71,10 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          UserInfoHeader(),
+                          UserInfoHeader(
+                            userName: viewModel.user.name,
+                            userPhotoUrl: viewModel.user.photoUrl ?? '',
+                          ),
                           Gap(32),
                           Text(
                             'Explore a Diocese de Santos',
