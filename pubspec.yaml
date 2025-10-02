@@ -22,6 +22,7 @@ dependencies:
   firebase_core: ^4.1.1
   google_sign_in: ^7.2.0
   mmkv: "^2.2.4"
+  cloud_firestore: ^6.0.2
 
 dev_dependencies:
   flutter_test:

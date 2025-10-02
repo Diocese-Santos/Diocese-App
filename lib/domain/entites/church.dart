@@ -3,11 +3,7 @@ final class Church {
   final String city;
   final String image;
 
-  const Church({
-    required this.name,
-    required this.city,
-    required this.image,
-  });
+  const Church({required this.name, required this.city, required this.image});
 }
 
 final class DetailedChurh extends Church {
