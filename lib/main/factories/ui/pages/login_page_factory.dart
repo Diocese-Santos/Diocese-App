@@ -5,7 +5,7 @@ import 'package:diocese_santos/ui/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 final ssoClient = makeGoogleSignInAdapter();
-final storageClient = makeMMKVAdapter();
+final storageClient = getMMKVInstance();
 
 Widget makeLoginPage() {
   final presenter = LoginRxPresenter(

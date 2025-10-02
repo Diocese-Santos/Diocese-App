@@ -8,7 +8,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:flutter/material.dart';
-import 'package:mmkv/mmkv.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,8 +15,7 @@ Future main() async {
   await dotenv.load(fileName: ".env");
 
   //makeSegmentAdapter();
-  await MMKV.initialize();
-  makeMMKVAdapter();
+  await makeMMKVAdapter();
 
   try {
     if (Firebase.apps.isEmpty) {
@@ -42,7 +40,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      routerConfig: router(),
+      routerConfig: router(getMMKVInstance()),
     );
   }
 }
