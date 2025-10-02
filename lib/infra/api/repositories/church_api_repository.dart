@@ -1,8 +1,24 @@
 import 'package:diocese_santos/domain/entites/church.dart';
+import 'package:diocese_santos/infra/api/client/baas_client.dart';
 
 final class ChurchApiRepository {
+  final BaaSClient client;
+
+  ChurchApiRepository({required this.client});
+
+  Future<List<Church>> listAllChurches() async {
+    final data = await client.get('church');
+
+    return data
+        .map(
+          (e) =>
+              Church(name: e['name'], city: e['city'], image: e['image_url']),
+        )
+        .toList();
+  }
+
   Future<List<Church>> loadChurchs() async {
-    Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     return [
       Church(
         name: 'Igreja A',

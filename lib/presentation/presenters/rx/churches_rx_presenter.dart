@@ -1,3 +1,4 @@
+import 'package:diocese_santos/domain/entites/church.dart';
 import 'package:diocese_santos/domain/entites/user.dart';
 import 'package:diocese_santos/infra/storage/client/storage_client.dart';
 import 'package:diocese_santos/presentation/presenters/churches_presenter.dart';
@@ -5,13 +6,17 @@ import 'package:rxdart/rxdart.dart';
 
 class ChurchesRxPresenter implements ChurchesPresenter {
   final StorageClient storageClient;
+  final Future<List<Church>> Function() churchesLoader;
 
   final churchesSubject = BehaviorSubject<ChurchesViewModel>.seeded(
     ChurchesViewModel.empty(),
   );
   final isBusySubject = BehaviorSubject<bool>();
 
-  ChurchesRxPresenter({required this.storageClient});
+  ChurchesRxPresenter({
+    required this.storageClient,
+    required this.churchesLoader,
+  });
 
   @override
   Stream<ChurchesViewModel> get churchesStream => churchesSubject.stream;
@@ -31,5 +36,15 @@ class ChurchesRxPresenter implements ChurchesPresenter {
         ),
       ),
     );
+  }
+
+  @override
+  Future<void> listAllChurches() async {
+    try {
+      final churchs = await churchesLoader();
+      churchesSubject.add(churchesSubject.value.copyWith(churches: churchs));
+    } catch (error) {
+      churchesSubject.addError(error);
+    }
   }
 }

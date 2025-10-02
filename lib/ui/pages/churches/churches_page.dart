@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:diocese_santos/ui/pages/churches/widgets/church_card.dart';
 import 'package:diocese_santos/ui/widgets/header.dart';
 import 'package:diocese_santos/ui/widgets/page_container.dart';
@@ -21,12 +20,7 @@ class _ChurchesPageState extends State<ChurchesPage> {
   void initState() {
     super.initState();
     widget.presenter.loadUserData();
-
-    FirebaseFirestore.instance.collection("church").get().then((event) {
-      for (var doc in event.docs) {
-        print("${doc.id} => ${doc.data()}");
-      }
-    });
+    widget.presenter.listAllChurches();
   }
 
   @override
@@ -65,14 +59,24 @@ class _ChurchesPageState extends State<ChurchesPage> {
                   userPhotoUrl: viewModel.user.photoUrl ?? '',
                 ),
               ),
-              Center(
-                child: ChurchCard(
-                  imageUrl:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZOAbsgAiuAEMopveeXXxd5OgepJypBABXg&s',
-                  name: 'teste',
-                  address: 'teste',
-                ),
-              ),
+              viewModel.churches.isEmpty
+                  ? Center(child: Text('Nenhuma paróquia encontrada'))
+                  : SizedBox(
+                    height: MediaQuery.of(context).size.height - 100,
+                    child: ListView.builder(
+                      padding: const EdgeInsets.all(16),
+                      itemBuilder:
+                          (context, index) => Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: ChurchCard(
+                              imageUrl: viewModel.churches[index].image,
+                              name: viewModel.churches[index].name,
+                              address: viewModel.churches[index].city,
+                            ),
+                          ),
+                      itemCount: viewModel.churches.length,
+                    ),
+                  ),
             ],
           ),
         );
