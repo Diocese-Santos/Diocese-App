@@ -1,3 +1,4 @@
+import 'package:diocese_santos/main/factories/ui/pages/churches_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/forgot_password_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/history_page_factory.dart';
 import 'package:diocese_santos/main/factories/ui/pages/home_page_factory.dart';
@@ -42,14 +43,9 @@ GoRouter router(StorageClient storageClient) {
         path: Routes.registerUploadPhoto,
         builder: (_, __) => makeRegisterUploadPhotoPage(),
       ),
-      GoRoute(
-        path: Routes.home,
-        builder: (_, __) => makeHomePage(),
-      ),
-      GoRoute(
-        path: Routes.history,
-        builder: (_, __) => makeHistoryPage(),
-      ),
+      GoRoute(path: Routes.home, builder: (_, __) => makeHomePage()),
+      GoRoute(path: Routes.history, builder: (_, __) => makeHistoryPage()),
+      GoRoute(path: Routes.churches, builder: (_, __) => makeChurchesPage()),
     ],
   );
 }

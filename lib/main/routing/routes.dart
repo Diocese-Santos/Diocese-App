@@ -9,4 +9,5 @@ abstract final class Routes {
   static const registerCompleteData = '/register/complete-data';
   static const registerUploadPhoto = '/register/upload-photo';
   static const history = '/history';
+  static const churches = '/churches';
 }
