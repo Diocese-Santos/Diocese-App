@@ -320,6 +320,62 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.16.0"
+  mmkv:
+    dependency: "direct main"
+    description:
+      name: mmkv
+      sha256: bf06a3faa87157ec644f7d6cca2c91986a1c8432d6f96c20cc0753e642ebd381
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.4"
+  mmkv_android:
+    dependency: transitive
+    description:
+      name: mmkv_android
+      sha256: "1569e273308d8f12497859672a0abd89ddeb4be3c64078e7b577ed9d813f3cd5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.4"
+  mmkv_ios:
+    dependency: transitive
+    description:
+      name: mmkv_ios
+      sha256: b4fbc24b97c583568276a19d45787f3b497b7958bad21589069c1c3971a30915
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.4"
+  mmkv_linux:
+    dependency: transitive
+    description:
+      name: mmkv_linux
+      sha256: "219559d516ee7bac052c3ddeb2aed3d83fb6579ce62d78b278c206bca6cf3e3e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.4"
+  mmkv_ohos:
+    dependency: transitive
+    description:
+      name: mmkv_ohos
+      sha256: e51bce5b350d966bdd4033cc3d6c42536974ee6caf0ee65328e7c6f2ff3a637b
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.4"
+  mmkv_platform_interface:
+    dependency: transitive
+    description:
+      name: mmkv_platform_interface
+      sha256: "9ac0e51172501e634e0d84ade7b4642f7c0d7ea45f3eeb52442ed42028d8e335"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.3"
+  mmkv_win32:
+    dependency: transitive
+    description:
+      name: mmkv_win32
+      sha256: "11d2b6430a69bb57466047dd2a9702239d470e92486550b03acf18a1cbcf26fb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.4"
   path:
     dependency: transitive
     description:

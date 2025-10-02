@@ -1,5 +1,5 @@
 import 'package:diocese_santos/firebase_options.dart';
-import 'package:diocese_santos/main/factories/infra/tracking/adapters/segment_adapter_factory.dart';
+import 'package:diocese_santos/main/factories/infra/storage/adapters/mmkv_adapter_factory.dart';
 import 'package:diocese_santos/main/routing/router.dart';
 
 import 'package:diocese_santos/ui/core/themes/theme.dart';
@@ -8,6 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:flutter/material.dart';
+import 'package:mmkv/mmkv.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +16,8 @@ Future main() async {
   await dotenv.load(fileName: ".env");
 
   //makeSegmentAdapter();
+  await MMKV.initialize();
+  makeMMKVAdapter();
 
   try {
     if (Firebase.apps.isEmpty) {

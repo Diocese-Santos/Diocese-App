@@ -16,3 +16,14 @@ subprojects {
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
+
+dependencies {
+    modules {
+        module("com.tencent:mmkv-static") {
+            replacedBy("com.tencent:mmkv", "Using mmkv for flutter")
+        }
+        module("com.tencent:mmkv-shared") {
+            replacedBy("com.tencent:mmkv", "Using mmkv for flutter")
+        }
+    }
+}
