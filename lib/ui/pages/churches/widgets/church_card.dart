@@ -5,12 +5,16 @@ class ChurchCard extends StatelessWidget {
   final String imageUrl;
   final String name;
   final String address;
+  final bool isFavorite;
+  final VoidCallback? onFavoritePressed;
 
   const ChurchCard({
     super.key,
     required this.imageUrl,
     required this.name,
     required this.address,
+    this.isFavorite = false,
+    this.onFavoritePressed,
   });
 
   @override
@@ -72,6 +76,21 @@ class ChurchCard extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+          ),
+          const Spacer(),
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              shape: CircleBorder(),
+              padding: EdgeInsets.zero,
+              fixedSize: const Size(48, 48),
+              side: BorderSide(color: Colors.white),
+            ),
+            onPressed: onFavoritePressed,
+            child: Icon(
+              isFavorite ? Icons.star_rounded : Icons.star_outline_rounded,
+              color: Colors.amber,
+              size: 24,
             ),
           ),
         ],

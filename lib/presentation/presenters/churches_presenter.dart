@@ -8,6 +8,7 @@ abstract class ChurchesPresenter {
   Future<void> loadUserData();
 
   Future<void> listAllChurches();
+  Future<void> toggleFavoriteChurch(String id, bool isAlreadyFavorite);
 }
 
 final class ChurchesViewModel {

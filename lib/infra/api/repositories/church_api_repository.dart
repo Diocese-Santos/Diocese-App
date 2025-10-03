@@ -11,8 +11,17 @@ final class ChurchApiRepository {
 
     return data
         .map(
-          (e) =>
-              Church(name: e['name'], city: e['city'], image: e['image_url']),
+          (e) => Church(
+            id: e['id'],
+            name: e['name'],
+            city: e['city'],
+            image: e['image_url'],
+            favoriteUsers:
+                (e['favorite_users'] as List<dynamic>?)
+                    ?.map((e) => e.toString())
+                    .toList() ??
+                [],
+          ),
         )
         .toList();
   }
@@ -21,22 +30,28 @@ final class ChurchApiRepository {
     await Future.delayed(const Duration(seconds: 1));
     return [
       Church(
+        id: '1',
         name: 'Igreja A',
         city: 'Santos',
         image:
             'https://www.diocesedesantos.com.br/images/paroquias/santo_antonio_do_embare.jpg',
+        favoriteUsers: [],
       ),
       Church(
+        id: '2',
         name: 'Igreja B',
         city: 'Santos',
         image:
             'https://www.diocesedesantos.com.br/images/paroquias/Catedral-de-Santos-SP.jpg',
+        favoriteUsers: [],
       ),
       Church(
+        id: '3',
         name: 'Igreja C',
         city: 'Peruíbe',
         image:
             'https://www.diocesedesantos.com.br/images/paroquias/Paroquia_Sao_Joao_Batista_-_Peruibe.jpg',
+        favoriteUsers: [],
       ),
     ];
   }

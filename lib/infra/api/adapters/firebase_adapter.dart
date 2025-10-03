@@ -9,6 +9,6 @@ final class FirebaseAdapter implements BaaSClient {
   @override
   Future<List<dynamic>> get(String collection) async {
     final response = await client.collection(collection).get();
-    return response.docs.map((doc) => doc.data()).toList();
+    return response.docs.map((doc) => {'id': doc.id, ...doc.data()}).toList();
   }
 }

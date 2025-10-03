@@ -69,6 +69,18 @@ class _ChurchesPageState extends State<ChurchesPage> {
                           (context, index) => Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: ChurchCard(
+                              onFavoritePressed: () {
+                                widget.presenter.toggleFavoriteChurch(
+                                  viewModel.churches[index].id,
+                                  viewModel.churches[index].favoriteUsers
+                                          ?.contains(viewModel.user.id) ??
+                                      false,
+                                );
+                              },
+                              isFavorite:
+                                  viewModel.churches[index].favoriteUsers
+                                      ?.contains(viewModel.user.id) ??
+                                  false,
                               imageUrl: viewModel.churches[index].image,
                               name: viewModel.churches[index].name,
                               address: viewModel.churches[index].city,

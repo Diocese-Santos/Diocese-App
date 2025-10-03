@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:diocese_santos/domain/entites/church.dart';
 import 'package:diocese_santos/domain/entites/user.dart';
 import 'package:diocese_santos/infra/storage/client/storage_client.dart';
@@ -46,5 +47,19 @@ class ChurchesRxPresenter implements ChurchesPresenter {
     } catch (error) {
       churchesSubject.addError(error);
     }
+  }
+
+  @override
+  Future<void> toggleFavoriteChurch(String id, bool isAlreadyFavorite) async {
+    final userId = storageClient.getString('user_id');
+
+    await FirebaseFirestore.instance.collection('church').doc(id).update({
+      'favorite_users':
+          isAlreadyFavorite
+              ? FieldValue.arrayRemove([userId])
+              : FieldValue.arrayUnion([userId]),
+    });
+
+    await listAllChurches();
   }
 }
